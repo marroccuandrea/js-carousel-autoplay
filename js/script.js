@@ -8,7 +8,7 @@ let interval;
 // aggiungo un contatore per le immagini
 let counterImg = 0;
 
-// 3. salvo le immagini in un array
+// Salvo le immagini in un array
 const images = [
     'img/01.webp',
     'img/02.webp',
@@ -17,10 +17,6 @@ const images = [
     'img/05.webp',
 ]
 
-// nascondo il bottone down di default nella prima imagine
-// down.classList.add('hide');
-
-// 4.
 
 for(let i = 0; i < images.length; i++){
     const img = images[i];
@@ -33,7 +29,7 @@ const imgCollection = document.getElementsByClassName('img');
 //tolgo la classe hide al primo elemento sennò non risulta visibile
 imgCollection[counterImg].classList.remove('hide');
 
-// 5.
+
 down.addEventListener('click', function(){
     clickDown();
 })
