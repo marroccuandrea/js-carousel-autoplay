@@ -4,3 +4,5 @@ Riprendendo il carousel realizzato in passato  e con le Timeng Function rendete 
 Attenzione: dopo l’ultima slide deve riapparire la prima e così via
 
 ## Svolgimento
+1. Abilito il carosello alla riproduzione continua tramite i pulsanti
+2. Creo una function che fa cambiare le immagini ogni 3 secondi

@@ -16,7 +16,7 @@ const images = [
 ]
 
 // nascondo il bottone down di default nella prima imagine
-down.classList.add('hide');
+// down.classList.add('hide');
 
 // 4.
 
@@ -33,28 +33,31 @@ imgCollection[counterImg].classList.remove('hide');
 
 // 5.
 down.addEventListener('click', function(){
-    // 7.
-    up.classList.remove('hide');
-    
-    // 6.
-    imgCollection[counterImg--].classList.add('hide');
-    imgCollection[counterImg].classList.remove('hide');
-    // 8.
-    if(counterImg == 0){
-        down.classList.add('hide')
-    }
+    clickDown();
 })
 
 up.addEventListener('click', function(){
     
-    // 7.
-    down.classList.remove('hide');
-    // 6.
-    imgCollection[counterImg++].classList.add('hide');
-    imgCollection[counterImg].classList.remove('hide');
-
-    // 10.
-    if(counterImg == images.length - 1){
-        up.classList.add('hide');
-    }
+    clickUp();
 })
+
+// Raggruppo le funzioni 
+function clickUp(){
+    imgCollection[counterImg++].classList.add('hide');
+    // 1
+    if(counterImg === images.length){
+        counterImg = 0;
+    }
+
+    imgCollection[counterImg].classList.remove('hide');
+}
+
+function clickDown(){
+    imgCollection[counterImg--].classList.add('hide');
+    // 1
+    if(counterImg < 0){
+        counterImg = images.length - 1;
+    }
+
+    imgCollection[counterImg].classList.remove('hide');
+}
