@@ -2,6 +2,8 @@
 const imgWrapper = document.querySelector('.img-wrapper');
 const down = document.querySelector('.down');
 const up = document.querySelector('.up');
+// Creo una variabile per la funzione setInterval
+let interval;
 
 // aggiungo un contatore per le immagini
 let counterImg = 0;
@@ -37,8 +39,8 @@ down.addEventListener('click', function(){
 })
 
 up.addEventListener('click', function(){
-    
     clickUp();
+    
 })
 
 // Raggruppo le funzioni 
@@ -61,3 +63,11 @@ function clickDown(){
 
     imgCollection[counterImg].classList.remove('hide');
 }
+
+// 2.
+
+startScrolling();
+function startScrolling() {
+    // Call clickUp function every 3 seconds
+    interval = setInterval(clickUp, 3000);
+  }
