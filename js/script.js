@@ -70,4 +70,12 @@ startScrolling();
 function startScrolling() {
     // Call clickUp function every 3 seconds
     interval = setInterval(clickUp, 3000);
-  }
+}
+// 3.
+function stopScrolling(){
+    clearInterval(interval);
+}
+// Si ferma lo scroll quado passo sopra all'immagine
+imgWrapper.addEventListener( 'mouseover', stopScrolling );
+// Riprende lo scroll quando  si esce dall'immagine
+imgWrapper.addEventListener( 'mouseout',  startScrolling );
